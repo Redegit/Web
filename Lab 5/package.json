@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "node-sass": "^8.0.0",
+    "scss": "^0.2.4"
+  },
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss /style.scss  /style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  }
+}

@@ -1,0 +1,295 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.canvas {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(0deg, rgb(169 165 0) 0%, rgb(108 184 39) 33%, rgba(255, 155, 97, 1) 34%, rgba(72, 217, 255, 1) 88%, rgba(159, 235, 255, 1) 100%)
+}
+
+#sun {
+	position: absolute;
+	top: 70px;
+	left: 10%;
+	z-index: 5;
+	height: 200px;
+	width: 200px;
+	animation: sun-transition 20s infinite alternate ease-in-out;
+}
+
+@keyframes sun-transition {
+	0% {
+		left: 10%;
+		transform: rotate(0deg);
+	}
+
+	100% {
+		left: calc(90% - 200px);
+		transform: rotate(359deg);
+	}
+}
+
+.tree {
+	position: absolute;
+	z-index: 10;
+}
+
+.tree:nth-child(1) {
+	left: 20%;
+	height: 500px;
+}
+
+
+.tree:nth-child(2) {
+	left: 80%;
+	height: 500px;
+}
+
+
+.tree:nth-child(3) {
+	left: 50%;
+	top: 30%;
+	height: 600px;
+}
+
+
+.trunk,
+.branch {
+	border-radius: 25px;
+	background: linear-gradient(to right, #7f3333, #4d2020);
+}
+
+.trunk {
+	position: relative;
+	width: 10px;
+	height: 100%;
+	margin: 0 auto;
+	transform-origin: bottom center;
+	transform: rotate(-1deg);
+	animation: wind 10s infinite alternate;
+	animation-timing-function: cubic-bezier(.70, 0, .30, 1);
+}
+
+@keyframes wind {
+	0% {
+		transform: rotate(-2deg);
+	}
+
+	100% {
+		transform: rotate(2deg);
+	}
+}
+
+.branch {
+	position: absolute;
+	width: 5px;
+	transform-origin: bottom center;
+}
+
+.branch:nth-child(even) {
+	transform: rotate(58deg);
+	animation: windEvenBranch 5s infinite alternate ease-in-out;
+	animation-delay: .5s;
+}
+
+.branch:nth-child(odd) {
+	transform: rotate(-62deg);
+	animation: windOddBranch 10s infinite alternate ease-in-out;
+	animation-delay: .5s;
+}
+
+@keyframes windEvenBranch {
+	0% {
+		transform: rotate(58deg);
+	}
+
+	100% {
+		transform: rotate(62deg);
+	}
+}
+
+@keyframes windOddBranch {
+	0% {
+		transform: rotate(-62deg);
+	}
+
+	100% {
+		transform: rotate(-58deg);
+	}
+}
+
+.leaf {
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	border-radius: 75% 0 75% 0;
+	background: linear-gradient(180deg, rgba(255, 185, 21, 1) 0%, rgba(194, 255, 44, 1) 100%);
+	animation-name: leaf-grow;
+	animation-duration: 8s;
+	animation-fill-mode: both;
+	animation-direction: normal;
+	--degree: 0;
+	transform-origin: 0% 100%;
+}
+
+.leaf:nth-child(odd) {
+	left: 100%;
+
+}
+
+.leaf:nth-child(even) {
+	left: 0%;
+}
+
+@keyframes leaf-grow {
+	0% {
+		transform: rotate(var(--degree)) scale(0);
+	}
+
+	30% {
+		transform: rotate(var(--degree)) scale(1);
+	}
+
+	70% {
+		transform: rotate(var(--degree)) scale(1);
+	}
+
+	100% {
+		transform: rotate(var(--degree)) scale(0);
+	}
+}
+
+.slideContainer {
+	width: 90%;
+	display: flex;
+	position: fixed;
+	z-index: 100;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-top: 10px;
+	justify-content: space-around;
+	align-items: center;
+	background: #ffffff;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.slider {
+	width: 70%;
+	height: 25px;
+	outline: none;
+	opacity: 0.7;
+	transition: opacity .2s;
+	cursor: pointer;
+}
+
+.slider:hover {
+	opacity: 1;
+}
+
+#createTreeButton {
+	padding: 10px;
+	border-radius: 20px;
+	background-color: #48daff80;
+	border-width: 0;
+	cursor: pointer;
+}
+
+/* Flowers */
+.flower {
+	position: absolute;
+	animation-name: flower-grow;
+	animation-duration: 4s;
+	animation-fill-mode: both;
+	height: 16px;
+	width: 16px;
+}
+
+@keyframes flower-grow {
+	0% {
+		transform: rotate(var(--degree)) scale(0);
+	}
+
+	100% {
+		transform: rotate(var(--degree)) scale(1);
+	}
+}
+
+.flower:nth-child(odd) {
+	left: 5px;
+	transform-origin: left center;
+}
+
+.flower:nth-child(even) {
+	left: -10px;
+	transform-origin: right center;
+}
+
+.petal {
+	position: relative;
+	width: 8px;
+	height: 8px;
+	border-radius: 0 50% 0 50%;
+	transform-origin: bottom right;
+	background: linear-gradient(320deg, rgba(255,105,36,1) 0%, rgba(255,181,138,1) 65%);
+}
+
+.petal:nth-child(2) {
+	transform: rotate(90deg);
+	top: -8px;
+}
+
+.petal:nth-child(3) {
+	transform: rotate(180deg);
+	top: -16px;
+}
+
+.petal:nth-child(4) {
+	transform: rotate(270deg);
+	top: -24px;
+}
+
+#grass-block {
+
+}
+
+.grass {
+	position: fixed;
+    display: block;
+    top: 40%;
+    left: 400px;
+    height: 40px;
+    width: 20px;
+    z-index: 10000;
+    background: green;
+    border-radius: 10% 100% 0 0;
+	animation: grass-amination 2s ease-in-out infinite;
+}
+
+.grass:nth-child(2) {
+    left: 420px;
+}
+
+.grass:nth-child(3) {
+    left: 440px;
+}
+
+@keyframes grass-animation {
+	0% {
+		border-radius: 10% 100% 0 0;
+		height: 10px;
+	}
+
+	100% {
+		border-radius: 100% 10% 0 0;
+		height: 100px;
+	}
+}
