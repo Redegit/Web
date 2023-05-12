@@ -1,0 +1,156 @@
+* {
+  font-family: "Myriad Pro", Myriad;
+}
+
+body {
+  margin: 0;
+  background-color: #fffff7;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  background-color: white;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+main .photo {
+  min-width: 600px;
+  height: auto;
+  border-color: transparent;
+  display: block;
+}
+
+main .right {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 30px;
+  gap: 50px;
+  min-width: 100px;
+  width: auto;
+}
+
+main .right .top_bar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  word-wrap: normal;
+  padding-top: 20px;
+}
+
+main .right .top_bar .link,
+main .right .top_bar .phone {
+  color: #898989;
+  font-size: 24px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-weight: 400;
+  text-decoration: none;
+  padding-bottom: 4px;
+  cursor: pointer;
+  background-color: white;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main .right .top_bar .phone {
+  color: black;
+  font-size: 24px;
+  text-align: left;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+main .right .top_bar .link:hover,
+main .right .top_bar .phone:hover {
+  border-bottom: 4px solid #2a26fe;
+  padding-bottom: 0;
+}
+
+main .right .bottom {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  word-wrap: normal;
+  width: 100%;
+}
+
+main .right .bottom .slogan {
+  color: black;
+  font-size: 40px;
+  align-self: auto;
+  text-align: left;
+  font-weight: 400;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+main .right .bottom .description {
+  color: black;
+  font-size: 24px;
+  font-style: Regular;
+  text-align: left;
+  font-weight: 400;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+main .right .bottom .button {
+  padding: 20px 0;
+  border-color: black;
+  border-radius: 25px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  width: 150px;
+  font-weight: 600;
+  color: white;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+main .right .bottom .button:hover {
+  background-color: rgba(27, 27, 27, 0.055);
+}
+
+@media screen and (max-width: 1000px) {
+  main {
+    flex-direction: column;
+  }
+
+  .photo {
+    width: 100%;
+  }
+}
+
+.btn {
+  background-color: orange;
+}
+
+.btn:hover {
+  background-color: rgb(255, 184, 52) !important;
+}
